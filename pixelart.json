@@ -1,0 +1,55 @@
+{
+  "name": "PixelArtCreator",
+  "types": [{
+      "name": "Pixel",
+      "fields": [
+        { "name": "blue", "type": "ubyte" },
+        { "name": "green", "type": "ubyte" },
+        { "name": "red", "type": "ubyte" }
+      ]
+    }],
+  "functions": [{
+    "name": "rgb_to_hsl_adjust_saturation_and_to_rgb",
+    "arguments": [
+      { "name": "aWidth", "type": "int", "argType": "in" },
+      { "name": "aHeight", "type": "int", "argType": "in" },
+      { "name": "aSaturationWeight", "type": "float", "argType": "in" },
+      { "name": "aBufferIn", "type": { "arrayType": "Pixel" }, "memoryType": "global", "argType": "in" },
+      { "name": "aBufferOut", "type": { "arrayType": "Pixel" }, "memoryType": "global", "argType": "out" }
+    ]
+  },
+  {
+    "name": "to_indexed_color",
+    "arguments": [
+      { "name": "aWidth", "type": "int", "argType": "in" },
+      { "name": "aHeight", "type": "int", "argType": "in" },
+      { "name": "aLevel", "type": "int", "argType": "in" },
+      { "name": "aBufferIn", "type": { "arrayType": "Pixel" }, "memoryType": "global", "argType": "in" },
+      { "name": "aBufferOut", "type": { "arrayType": "Pixel" }, "memoryType": "global", "argType": "out" }
+    ]
+  },
+  {
+    "name": "down_scale",
+    "arguments": [
+      { "name": "aInWidth", "type": "int", "argType": "in" },
+      { "name": "aInHeight", "type": "int", "argType": "in" },
+      { "name": "aOutWidth", "type": "int", "argType": "in" },
+      { "name": "aOutHeight", "type": "int", "argType": "in" },
+      { "name": "aScaleFactor", "type": "float", "argType": "in" },
+      { "name": "aBufferIn", "type": { "arrayType": "Pixel" }, "memoryType": "global", "argType": "in" },
+      { "name": "aBufferOut", "type": { "arrayType": "Pixel" }, "memoryType": "global", "argType": "out" }
+    ]
+  },
+  {
+    "name": "up_scale",
+    "arguments": [
+      { "name": "aInWidth", "type": "int", "argType": "in" },
+      { "name": "aInHeight", "type": "int", "argType": "in" },
+      { "name": "aOutWidth", "type": "int", "argType": "in" },
+      { "name": "aOutHeight", "type": "int", "argType": "in" },
+      { "name": "aScaleFactor", "type": "float", "argType": "in" },
+      { "name": "aBufferIn", "type": { "arrayType": "Pixel" }, "memoryType": "global", "argType": "in" },
+      { "name": "aBufferOut", "type": { "arrayType": "Pixel" }, "memoryType": "global", "argType": "out" }
+    ]
+  }]
+}
